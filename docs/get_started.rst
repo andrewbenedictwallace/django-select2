@@ -39,8 +39,10 @@ Replacing::
 
 with::
 
-        class MyForm(forms.Form):
-            things = ModelMultipleChoiceField(queryset=Thing.objects.all(), widget=Select2MultipleWidget)
+        from django_select2.forms import Select2MultipleWidget
+
+        class MyForm(django.forms.Form):
+            things = django.forms.ModelMultipleChoiceField(queryset=Thing.objects.all(), widget=Select2MultipleWidget)
 
 2. Add the CSS to the ``head`` of your Django template::
 
